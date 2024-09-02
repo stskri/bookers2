@@ -19,7 +19,9 @@
           <!--Users-->
           <li></li>
           <!--Books-->
-          <li></li>
+          <li>
+            <%= link_to "Books", books_path %>
+          </li>
           <!--Log out-->
           <li>
             <%= link_to "Log out", destroy_user_session_path, method: :delete %>
@@ -28,10 +30,12 @@
       <% else %>
         <ul>
           <!--Home-->
-          <li></li>
+          <li>
+            <%= link_to "Home", top_path %>
+          </li>
           <!--About-->
           <li>
-            <%= link_to "About", :about %>
+            <%= link_to "About", about_path %>
           </li>
           <!--Sign up-->
           <li>
