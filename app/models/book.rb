@@ -4,8 +4,11 @@ class Book < ApplicationRecord
   has_one_attached :image
   
   def get_image
-    file_path = Rails.root.join('app/assets/images/default-image(80x80).jpg')
-    image.attach(io: File.open(file_path), filename: 'default-image.jpg', content_type: 'image/jpeg')
+    unless image.attached?
+      file_path = Rails.root.join('app/assets/images/default-image.jpg')
+      image.attach(io: File.open(file_path), filename: 'default-image.jpg', content_type: 'image/jpeg')
+    end
+    image
   end
   
 end
