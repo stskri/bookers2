@@ -1,2 +1,28 @@
-<h1>Users#edit</h1>
-<p>Find me in app/views/users/edit.html.erb</p>
+<div>
+  <div>
+    <div>
+      <h2>User info</h2>
+      <%= form_with model: @user do |f| %>
+        <div>
+          <div><label>Name</label></div>
+          <div>
+            <%= f.text_field :name, autofocus: true %>
+          </div>
+        </div>
+        <div>
+          <div><labes>Image</labes></div>
+          <div>
+            <%= f.file_field :profile_image, accept: "image/*" %>
+          </div>
+        </div>
+        <div>
+          <div><label>Introduction</label></div>
+          <div>
+            <%= f.text_area :introduction %>
+          </div>
+        </div>
+        <%= f.submit "Update User" %>
+      <% end %>
+    </div>
+  </div>
+</div>
