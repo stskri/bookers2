@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    
+
     <script src="https://kit.fontawesome.com/97d6fa8903.js" crossorigin="anonymous"></script>
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -16,9 +16,13 @@
       <% if user_signed_in? %>
         <ul>
           <!--Home-->
-          <li></li>
+          <li>
+            <%= link_to "Home", user_path(current_user.id) %>
+          </li>
           <!--Users-->
-          <li></li>
+          <li>
+            <%= link_to "Users", users_path %>
+          </li>
           <!--Books-->
           <li>
             <%= link_to "Books", books_path %>
@@ -49,12 +53,12 @@
         </ul>
       <% end %>
     </header>
-    
+
     <%= yield %>
-    
+
     <footer>
       <p>CopyRight Infratop.inc</p>
     </footer>
-    
+
   </body>
 </html>
