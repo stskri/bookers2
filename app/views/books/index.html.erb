@@ -22,28 +22,7 @@
 
   <%= link_to "edit buttom", edit_user_path(current_user.id) %>
 
-  <h2>New book</h2>
-  <%= form_with model: @book do |f| %>
-    <div>
-      <div>
-        <label>Title</label>
-      </div>
-      <div>
-        <%= f.text_field :title %>
-      </div>
-    </div>
-    <div>
-      <div>
-        <label>Opinion</label>
-      </div>
-      <div>
-        <%= f.text_area :body %>
-      </div>
-    </div>
-    <div>
-      <%= f.submit "Create Book" %>
-    </div>
-  <% end %>
+  <%= render 'newbook' %>
 
 </div>
 
