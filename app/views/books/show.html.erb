@@ -27,7 +27,7 @@
     <tbody>
       <tr>
         <td>
-          user_img
+          <%= image_tag @book.user.get_profile_image(80,80) %>
           <%= @book.user.name %>
         </td>
         <td><%= @book.title %></td>
