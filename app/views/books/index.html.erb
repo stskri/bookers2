@@ -1,24 +1,5 @@
 <div>
-  <h2>User info</h2>
-  <div>
-    <%= image_tag current_user.get_profile_image(100,100) %>
-  </div>
-  <table>
-    <tbody>
-      <tr>
-        <th>name</th>
-        <th>
-          <%= current_user.name %>
-        </th>
-      </tr>
-      <tr>
-        <th>introduction</th>
-        <th>
-          <%= current_user.introduction %>
-        </th>
-      </tr>
-    </tbody>
-  </table>
+  <%= render 'users/info', user: current_user %>
 
   <%= link_to "edit buttom", edit_user_path(current_user.id) %>
 
