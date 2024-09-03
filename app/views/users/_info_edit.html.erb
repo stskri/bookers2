@@ -18,3 +18,11 @@
       </tr>
     </tbody>
   </table>
+  
+  <div>
+  <% if user == current_user %>
+    <%= link_to 'user_edit', edit_user_path(user.id) %>
+  <% else %>
+    <%= link_to 'current_user', user_path(current_user) %>
+  <% end %>
+</div>
