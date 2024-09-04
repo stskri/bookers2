@@ -1,7 +1,27 @@
 <div>
+  <div>
+  <% if @book.errors.any? %>
+    <div>
+      <h3><%= @book.errors.count  %>
+        <% if @book.errors.count >= 2 %>
+          errors
+        <% else %>
+          error
+        <% end %>
+      prohibited this obj from being saved:</h3>
+    </div>
+    <ul>
+      <% @book.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  <% end %>
+  </div>
+</div>
+
+<div>
   <%= render 'users/info_edit', user: current_user %>
   <%= render 'newbook' %>
-
 </div>
 
 

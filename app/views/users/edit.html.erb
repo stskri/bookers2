@@ -2,6 +2,17 @@
   <div>
     <div>
       <h2>User info</h2>
+        <% if @user.errors.any? %>
+          <div>
+            <h3>1 error prohibited this obj from being saved:</h3>
+          </div>
+          <ul>
+            <% @user.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        <% end %>
+
       <%= form_with model: @user do |f| %>
         <div>
           <div><label>Name</label></div>

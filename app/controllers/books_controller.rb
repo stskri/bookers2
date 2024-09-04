@@ -6,14 +6,18 @@ class BooksController < ApplicationController
   def create
     @book = Book.new(book_params)
     @book.user_id = current_user.id
-    @book.save
-    redirect_to books_path
+    if @book.save
+      redirect_to books_path
+    else
+      @books = Book.all
+      render :index
+    end
   end
 
   def index
     @book = Book.new
     @books = Book.all
-    @user = @book.user
+    # @user = @book.user いらない？
   end
 
   def show
@@ -22,7 +26,7 @@ class BooksController < ApplicationController
 
   def edit
     @book = Book.find(params[:id])
-    
+
   end
 
   def destroy
@@ -30,7 +34,7 @@ class BooksController < ApplicationController
     book.destroy
     redirect_to books_path
   end
-  
+
   def update
     book = Book.find(params[:id])
     book.update(book_params)
