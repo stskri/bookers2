@@ -89,7 +89,16 @@
       </nav>
     </header>
 
-    <%= yield %>
+    <main>
+      <% if notice %>
+        <p id="notice"><%= notice %></p>
+      <% else %>
+        <p id="notice"></p>
+      <% end %>
+  
+      <%= yield %>
+    </main>
+
 
     <footer>
       <div class="container mt-5">
