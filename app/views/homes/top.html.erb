@@ -1,7 +1,3 @@
-<% if notice %>
-  <p><%= notice %></p>
-<% end %>
-
 <div class="container">
   <div class="row">
     <div class="mx-auto">
@@ -20,14 +16,14 @@
       <div class="btn-wrapper col-10 mx-auto">
         <div row>
           <%= link_to new_user_session_path do %>
-            <div class="btn btn-info btn-sm btn-block mb-3 sign-in">
+            <div class="btn btn-info btn-sm btn-block mb-3">
               Log in
             </div>
           <% end %>
         </div>
         <div row>
           <%= link_to new_user_registration_path do %>
-            <div class="btn btn-success btn-sm btn-block sign-up">
+            <div class="btn btn-success btn-sm btn-block">
               Sign up
             </div>
           <% end %>

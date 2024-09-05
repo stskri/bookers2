@@ -1,22 +1,28 @@
-<h2>New book</h2>
-  <%= form_with model: Book.new do |f| %>
-    <div>
-      <div>
-        <label>Title</label>
+<div class="mt-3">
+  <h2>New book</h2>
+    <%= form_with model: Book.new do |f| %>
+      <div class="form-group">
+        <div>
+          <label>Title</label>
+        </div>
+        <div>
+          <%= f.text_field :title %>
+        </div>
       </div>
-      <div>
-        <%= f.text_field :title %>
+      <div class="form-group">
+        <div>
+          <label>Opinion</label>
+        </div>
+        <div>
+          <%= f.text_area :body %>
+        </div>
       </div>
-    </div>
-    <div>
-      <div>
-        <label>Opinion</label>
+      <div class="form-group">
+        <%= button_tag(type: 'submit', class: 'btn btn-success') do %>
+          <div>Create Book</div>
+        <% end %>
       </div>
-      <div>
-        <%= f.text_area :body %>
-      </div>
-    </div>
-    <div>
-      <%= f.submit "Create Book" %>
-    </div>
-  <% end %>
+      
+      
+    <% end %>
+</div>
