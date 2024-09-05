@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row">
-    <div class="mx-auto">
+    <div class="mx-auto col-11">
       <h1>welcome to <strong>
         <i class="fa-solid fa-book"></i>
         Bookers</strong> !!</h1>
@@ -14,19 +14,11 @@
       <p>about various books!</p>
 
       <div class="btn-wrapper col-10 mx-auto">
-        <div row>
-          <%= link_to new_user_session_path do %>
-            <div class="btn btn-info btn-sm btn-block mb-3">
-              Log in
-            </div>
-          <% end %>
+        <div class="row">
+          <%= link_to "Log in", new_user_session_path, class:'btn btn-info btn-sm btn-block mb-3' %>
         </div>
-        <div row>
-          <%= link_to new_user_registration_path do %>
-            <div class="btn btn-success btn-sm btn-block">
-              Sign up
-            </div>
-          <% end %>
+        <div class="row">
+          <%= link_to "Sign up", new_user_registration_path, class:'btn btn-success btn-sm btn-block' %>
         </div>
       </div>
     </div>

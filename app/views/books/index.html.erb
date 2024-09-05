@@ -1,6 +1,5 @@
 <div class="container px-5">
-  <div class="row">
-    <div>
+  <div>
     <% if @book.errors.any? %>
       <div>
         <h3><%= @book.errors.count  %>
@@ -18,43 +17,39 @@
       </ul>
     <% end %>
     </div>
-  </div>
-  
-  <div class="col-md-3">
-    <%= render 'users/info_edit', user: current_user %>
-    <%= render 'newbook' %>
-  </div>
-  
-  
-  
-  <div class="col-md-8 offset-md-1">
-    <h2>Books</h2>
-    <table class="table table-hover">
-      <thead>
-        <tr>
-          <th></th>
-          <th>Title</th>
-          <th>Opinion</th>
-        </tr>
-      </thead>
-  
-      <tbody>
-        <% @books.each do |book| %>
-        <tr>
-          <td>
-            <%= link_to user_path(book.user.id) do %>
-              <%= image_tag book.user.get_profile_image(80,80) %>
-            <% end %>
-          </td>
-          <td>
-            <%= link_to book_path(book.id) do %>
-              <%= book.title %>
-            <% end %>
-          </td>
-          <td><%= book.body %></td>
-        </tr>
-        <% end %>
-      </tbody>
-    </table>
+  <div class="row">
+    <div class="col-md-3">
+      <%= render 'users/info_edit', user: current_user %>
+      <%= render 'newbook' %>
+    </div>
+    <div class="col-md-8 offset-md-1">
+      <h2>Books</h2>
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th></th>
+            <th>Title</th>
+            <th>Opinion</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @books.each do |book| %>
+          <tr>
+            <td>
+              <%= link_to user_path(book.user.id) do %>
+                <%= image_tag book.user.get_profile_image(80,80) %>
+              <% end %>
+            </td>
+            <td>
+              <%= link_to book_path(book.id) do %>
+                <%= book.title %>
+              <% end %>
+            </td>
+            <td><%= book.body %></td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
   </div>
 </div>

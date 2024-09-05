@@ -6,5 +6,5 @@ Rails.application.routes.draw do
   get "/homes/about" => "homes#about", as: "about"
   resources :books, only: [:new, :create, :index, :edit, :show, :destroy, :update]
   resources :users, only: [:index, :show, :edit, :update]
-
+  get '/users/sign_out' => redirect('/homes/about')
 end
