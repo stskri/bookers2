@@ -1,6 +1,6 @@
-<div>
-  <div>
-    <div>
+<div class="container">
+  <div class="row">
+    <div class="px-5 mx-auto">
       <h1>Editing Book</h1>
 
       <div>
@@ -23,23 +23,25 @@
       </div>
 
       <%= form_with model: @book do |f| %>
-        <div>
+        <div class="form-group">
           <div><label>Title</label></div>
           <div>
-            <%= f.text_field :title %>
+            <%= f.text_field :title, class:'form-control' %>
           </div>
         </div>
 
-        <div>
+        <div class="form-group">
           <div><label>Opinion</label></div>
           <div>
-            <%= f.text_area :body %>
+            <%= f.text_area :body, class:'form-control' %>
           </div>
         </div>
 
-        <div>
-          <%= f.submit "Update Book" %>
-        </div>
+        <div class="form-group">
+          <%= button_tag(type: 'submit', class: 'btn btn-success') do %>
+            <div>Update Book</div>
+          <% end %>
+          </div>
       <% end %>
       <%= link_to "show", book_path(@book.id) %>
       |
